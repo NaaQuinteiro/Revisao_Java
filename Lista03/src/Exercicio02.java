@@ -10,6 +10,8 @@ public class Exercicio02 {
 
         Scanner read = new Scanner(System.in);
 
+        System.out.println("\n------Programa onde o usuario pode escolher vizualiza dados a respeito das informaçõe inseridas------");
+
         do{
 
             while (true){

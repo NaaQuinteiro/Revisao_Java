@@ -9,6 +9,7 @@ public class Exercicio01 {
 
         Scanner read = new Scanner(System.in);
 
+        System.out.println("\n------Programa onde o usuario vizualiza dados a respeito dos numeros inseridos------");
         do{
 
             while (true){
