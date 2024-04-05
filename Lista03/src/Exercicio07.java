@@ -2,35 +2,53 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Exercicio07 {
+
     public static void main(String[] args) {
 
-        String nome, nomeMaiorPeso = null, nomeMaiorAltura;
-        double peso, altura, maiorPeso = 0, maiorAltura = 0;
+        String nome, nomeMaiorPeso = null, nomeMaiorAltura = null;
+        double peso = 0, altura = 0, maiorPeso = 0, maiorAltura = 0;
         int contador = 1;
 
         Scanner read = new Scanner(System.in);
 
-        while (contador <=6){
+        while (contador <=3){
             try {
+
                 System.out.printf("Insira o nome da %d° pessoa: ", contador);
                 nome = read.nextLine();
 
-                System.out.printf("Insira a peso da %d° pessoa: ", contador);
-                peso = read.nextDouble();
+                do{
+                    try{
+                        System.out.printf("Insira a peso da %d° pessoa: ", contador);
+                        peso = read.nextDouble();
+                    }catch (InputMismatchException e){
+                        System.out.println("ERRO: Ops... você inseriu caracteres, por favor tente novamente.");
+                        peso = 0;
+                        read.nextLine();
+                    }
+                }while (peso <= 0);
 
-                System.out.printf("Insira a altura da %d° pessoa: ", contador);
-                altura = read.nextDouble();
+                do{
+                    try{
+                        System.out.printf("Insira a altura da %d° pessoa: ", contador);
+                        altura = read.nextDouble();
+                    }catch (InputMismatchException e){
+                        System.out.println("ERRO: Ops... você inseriu caracteres, por favor tente novamente.");
+                        altura = 0;
+                        read.nextLine();
+                    }
+                }while (altura <= 0);
 
                 if(peso > maiorPeso){
                     maiorPeso = peso;
                     nomeMaiorPeso = nome;
-                    contador ++;
                 }
-                if(altura > altura){
+                if(altura > maiorAltura){
                     maiorAltura = altura;
                     nomeMaiorAltura = nome;
-                    contador ++;
                 }
+                contador ++;
+
             }catch (InputMismatchException e){
                 System.out.println("ERRO: Ops... você inseriu caracteres, por favor tente novamente.");
             }
