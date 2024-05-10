@@ -2,8 +2,13 @@ package Exercicio01;
 
 public class Validacao {
 
-    public double validar(EntradaSaida entradaSaida){
-        if (entradaSaida.getNota() > 1)
+    public boolean validarNota(double nota){
+        if (nota >=0 && nota <=10){
+            return false;
+        }
+        else{
+            return true;
+        }
 
     }
 }

@@ -3,40 +3,39 @@ package Exercicio01;
 import java.util.Scanner;
 
 public class EntradaSaida {
-    double nota;
-    double peso;
-
-
-    public EntradaSaida() {
-
-    }
 
     Scanner read = new Scanner(System.in);
+    Validacao validacao = new Validacao();
 
-    public Double entradaDeNotas(){
+    public Double entradaDeNotas(int i){
+        double nota = 0;
 
-        System.out.println("Insira a nota: ");
-        this.nota = read.nextDouble();
+        do{
+            System.out.printf("Insira a %d° nota: ", i);
+            nota = read.nextDouble();
 
-        return this.nota;
+            if(validacao.validarNota(nota)){
+                System.out.println("Nota inválida, tente novamente!");
+            }
+        }while (validacao.validarNota(nota)); // repete enquanto a validação for falsa
 
-    }
-
-    public Double entradaDePeso(){
-        System.out.println("Insira o peso da 1° nota: ");
-        this.peso = read.nextDouble();
-        return this.peso; // ainda não ta certo também
-    }
-
-    public double getNota() {
         return nota;
     }
 
-    public double getPeso() {
+    public Double entradaDePeso(int i){
+
+        double peso = 0;
+
+        do{
+            System.out.printf("Insira o %d° peso: ", i);
+            peso = read.nextDouble();
+
+            if(peso <0){
+                System.out.println("Peso inválido, insira um valor positivo!");
+            }
+        }while (peso < 0); // impede pesos negativos
+
         return peso;
     }
 
-    public Scanner getRead() {
-        return read;
-    }
 }
