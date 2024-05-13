@@ -28,10 +28,29 @@ public class EntradaSaida {
 
     }
 
-//    public String mostrarDados(){
-//
-//
-//    };
+    public double obterHorasExtras(){
+        double horasExtras = 0;
+
+        System.out.println("Por favor insira o total suas Horas Extras: ");
+        horasExtras =  read.nextDouble();
+
+        return horasExtras;
+
+    }
+
+    public String mostrarDados(double salario, double horaExtra, double calculoInss,
+                               double calculoIrpf, double calculoPS, double calculoHoras, double calculoSalaLiqui){
+
+        return String.format("\n----------DADOS OBTIDOS DO USUÁRIO----------" +
+                "\nSalário Bruto: R$ %.2f" +
+                "\nHoras Extras: %.0fh" +
+                "\nDesconto de INSS: R$ %.2f" +
+                "\nDesconto de IRPF: R$ %.2f" +
+                "\nDesconto de Plano de Saúde: R$ %.2f" +
+                "\nAcréscimo de horas Extras: R$ %.2f" +
+                "\nSalário Líquido: R$ %.2f", salario, horaExtra, calculoInss, calculoIrpf, calculoPS, calculoHoras,
+                calculoSalaLiqui);
+    };
 
 
 }

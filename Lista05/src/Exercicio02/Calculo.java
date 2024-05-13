@@ -19,17 +19,17 @@ public class Calculo {
 
     // Retorna o salario com o desconto do inss
     public double descontarINSS(){
-        return this.salario - (this.salario*(valorInss/100));
+        return (this.salario*(valorInss/100));
     }
 
     //Retorna o salario com o desconto do irfp
     public double descontarIrfp(){
-        return (this.salario - (this.salario*(valorIrpf/100)));
+        return (this.salario*(valorIrpf/100));
     }
 
     //Retorna o salario com o desconto do Plano de saude
     public double descontarPlanoSaude(){
-        return  (this.salario - (this.salario+(valorPlanoSaude/100)));
+        return  (this.salario*(valorPlanoSaude/100));
     }
 
     //Retorna o salario com o valor das horas extras extras acrecentadas
