@@ -5,23 +5,19 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        double salario = 0, valorAEmprestar = 0, valorParcelas = 0;
-        Scanner read = new Scanner(System.in);
+        double  valorAEmprestar = 0, valorParcelas = 0;
 
         System.out.println("---------Programa para cálculo e validação de empréstimo---------");
 
         EntradaSaida entradaSaida = new EntradaSaida();
 
-        salario = entradaSaida.obterSalarioCliente();
-        valorAEmprestar = entradaSaida.obterEmprestimoCliente();
-
-        Calculo calculo = new Calculo(salario, valorAEmprestar);
+        Calculo calculo = new Calculo(entradaSaida.getSalario(), entradaSaida.getValorEmprestar());
 
         valorParcelas = calculo.calcularParcelas(calculo.calcularTotalASerPago());
 
         Validacao validacao = new Validacao();
 
-        if (validacao.validarEmprestimo(salario, valorParcelas)){
+        if (validacao.validarEmprestimo(entradaSaida.getSalario(), valorParcelas)){
             System.out.println("------Não é possível realizar o empréstimo!------\n" +
                     "O valor das parcelas ultrapassa 15% do valor de seu salário.");
         }else{

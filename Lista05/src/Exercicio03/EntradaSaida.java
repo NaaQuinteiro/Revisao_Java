@@ -4,7 +4,12 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class EntradaSaida {
+    double salario;
+    double valorAEmprestar;
+
     public EntradaSaida() {
+        this.salario =  obterSalarioCliente();
+        this.valorAEmprestar = obterEmprestimoCliente();
     }
 
     Scanner read = new Scanner(System.in);
@@ -34,6 +39,10 @@ public class EntradaSaida {
 
     }
 
+    double getSalario(){
+        return this.salario;
+    }
+
     public double obterEmprestimoCliente() {
 
         double valorAEmprestar = 0;
@@ -53,5 +62,9 @@ public class EntradaSaida {
             read.nextLine();
         }
         return valorAEmprestar;
+    }
+
+    double getValorEmprestar(){
+        return this.valorAEmprestar;
     }
 }

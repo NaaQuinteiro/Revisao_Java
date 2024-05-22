@@ -26,7 +26,7 @@ public class Calculo {
 
     public double calcularParcelas(double totalPagar){
 
-        return (totalPagar /24);
+        return (totalPagar /this.PeriodoDeTempo);
     }
     
 }

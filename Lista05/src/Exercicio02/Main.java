@@ -17,8 +17,8 @@ public class Main {
 
         EntradaSaida entradaSaida = new EntradaSaida();
 
-        salario = entradaSaida.obterSalarioBruto();
-        horasExtras = entradaSaida.obterHorasExtras();
+        salario = entradaSaida.getSalarioBruto();
+        horasExtras = entradaSaida.getHorasExtras();
 
         Calculo calculo = new Calculo(salario, horasExtras);
 

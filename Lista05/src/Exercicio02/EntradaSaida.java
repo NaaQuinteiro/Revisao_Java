@@ -3,10 +3,15 @@ package Exercicio02;
 import java.util.Scanner;
 
 public class EntradaSaida {
+
+    double salarioBruto;
+    double horasExtras;
+
     public EntradaSaida() {
+        this.salarioBruto = obterSalarioBruto();
+        this.horasExtras = obterHorasExtras();
 
     }
-
     Scanner read = new Scanner(System.in);
     public double obterSalarioBruto() {
 
@@ -28,6 +33,11 @@ public class EntradaSaida {
 
     }
 
+    // metodo que mostra apenas o salario bruto
+    double getSalarioBruto(){
+        return this.salarioBruto;
+    }
+
     public double obterHorasExtras(){
         double horasExtras = 0;
 
@@ -37,6 +47,11 @@ public class EntradaSaida {
         return horasExtras;
 
     }
+
+    double getHorasExtras(){
+        return this.horasExtras;
+    }
+
 
     public String mostrarDados(double salario, double horaExtra, double calculoInss,
                                double calculoIrpf, double calculoPS, double calculoHoras, double calculoSalaLiqui){
